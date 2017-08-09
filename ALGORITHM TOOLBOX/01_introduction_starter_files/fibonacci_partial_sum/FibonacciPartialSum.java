@@ -25,7 +25,7 @@ public class FibonacciPartialSum {
 
         return sum % 10;
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long from = scanner.nextLong();
@@ -33,4 +33,3 @@ public class FibonacciPartialSum {
         System.out.println(getFibonacciPartialSumNaive(from, to));
     }
 }
-

@@ -1,19 +1,45 @@
-# Uses python3
+#!/usr/bin/env python2
+
 import sys
 
-def get_fibonacci_huge_naive(n, m):
-    if n <= 1:
+
+def huge_fibonacci(n, m):
+    if n > m:
+        p = pisano_period(m)
+        ans = fibonacci(n % p) % m
+        return ans
+    else:
+        return fibonacci(n) % m
+
+
+def pisano_period(m):
+    if m < 2:
+        raise Exception("pisano period requires m >= 2")
+
+    i = 2
+    j, k = 0, 1
+
+    while True:
+        j, k = k % m, (j + k) % m
+        if j == 0 and k == 1:
+            return i - 1
+        i += 1
+
+
+def fibonacci(n):
+    if n in (0, 1):
         return n
 
-    previous = 0
-    current  = 1
+    i = 2
+    j, k = 0, 1
 
-    for _ in range(n - 1):
-        previous, current = current, previous + current
+    while i < n + 1:
+        j, k = k, j + k
+        i += 1
 
-    return current % m
+    return k
+
 
 if __name__ == '__main__':
-    input = sys.stdin.read();
-    n, m = map(int, input.split())
-    print(get_fibonacci_huge_naive(n, m))
+    n, m = [int(_) for _ in sys.stdin.readline().split()]
+    print huge_fibonacci(n, m)
