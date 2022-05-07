@@ -3,11 +3,7 @@
 import sys
 
 def largest_number(a):
-    #write your code here
-    res = ""
-    for x in a:
-        res += x
-    return res
+    return "".join(a)
 
 if __name__ == '__main__':
     input = sys.stdin.read()

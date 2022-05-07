@@ -19,9 +19,8 @@ def suffix_array_to_suffix_tree(sa, lcp, text):
     (corresponding to the root node), and it should be the first edge in the list (because
     it has the smallest first character of all edges outgoing from the root).
     """
-    tree = {}
     # Implement this function yourself
-    return tree
+    return {}
 
 
 if __name__ == '__main__':
@@ -55,13 +54,13 @@ if __name__ == '__main__':
     """
     stack = [(0, 0)]
     result_edges = []
-    while len(stack) > 0:
-      (node, edge_index) = stack[-1]
-      stack.pop()
-      if not node in tree:
-        continue
-      edges = tree[node]
-      if edge_index + 1 < len(edges):
-        stack.append((node, edge_index + 1))
-      print("%d %d" % (edges[edge_index][1], edges[edge_index][2]))
-      stack.append((edges[edge_index][0], 0))
+    while stack:
+        (node, edge_index) = stack[-1]
+        stack.pop()
+        if node not in tree:
+            continue
+        edges = tree[node]
+        if edge_index + 1 < len(edges):
+          stack.append((node, edge_index + 1))
+        print("%d %d" % (edges[edge_index][1], edges[edge_index][2]))
+        stack.append((edges[edge_index][0], 0))

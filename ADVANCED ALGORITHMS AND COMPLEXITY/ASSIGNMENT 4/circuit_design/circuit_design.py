@@ -1,6 +1,6 @@
 # python3
 n, m = map(int, input().split())
-clauses = [ list(map(int, input().split())) for i in range(m) ]
+clauses = [list(map(int, input().split())) for _ in range(m)]
 
 # This solution tries all possible 2^n variable assignments.
 # It is too slow to pass the problem.

@@ -8,8 +8,7 @@ def optimal_points(segments):
     points = []
     #write your code here
     for s in segments:
-        points.append(s.start)
-        points.append(s.end)
+        points.extend((s.start, s.end))
     return points
 
 if __name__ == '__main__':
