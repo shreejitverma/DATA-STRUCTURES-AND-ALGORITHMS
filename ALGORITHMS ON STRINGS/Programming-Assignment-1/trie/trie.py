@@ -10,9 +10,8 @@ import sys
 # node, and the keys are the letters on those edges, and the
 # values are the node IDs to which these edges lead.
 def build_trie(patterns):
-    tree = dict()
     # write your code here
-    return tree
+    return {}
 
 
 if __name__ == '__main__':
@@ -20,4 +19,4 @@ if __name__ == '__main__':
     tree = build_trie(patterns)
     for node in tree:
         for c in tree[node]:
-            print("{}->{}:{}".format(node, tree[node][c], c))
+            print(f"{node}->{tree[node][c]}:{c}")

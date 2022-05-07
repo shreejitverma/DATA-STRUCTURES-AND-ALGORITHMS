@@ -10,9 +10,8 @@ def build_suffix_array(text):
   in text where the i-th lexicographically smallest
   suffix of text starts.
   """
-  result = []
   # Implement this function yourself
-  return result
+  return []
 
 
 if __name__ == '__main__':

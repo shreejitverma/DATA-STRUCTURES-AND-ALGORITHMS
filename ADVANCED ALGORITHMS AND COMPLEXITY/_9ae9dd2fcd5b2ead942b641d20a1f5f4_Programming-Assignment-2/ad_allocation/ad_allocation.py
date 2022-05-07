@@ -6,9 +6,7 @@ def allocate_ads(n, m, A, b, c):
   return [0, [0] * m]
 
 n, m = list(map(int, stdin.readline().split()))
-A = []
-for i in range(n):
-  A += [list(map(int, stdin.readline().split()))]
+A = [list(map(int, stdin.readline().split())) for _ in range(n)]
 b = list(map(int, stdin.readline().split()))
 c = list(map(int, stdin.readline().split()))
 

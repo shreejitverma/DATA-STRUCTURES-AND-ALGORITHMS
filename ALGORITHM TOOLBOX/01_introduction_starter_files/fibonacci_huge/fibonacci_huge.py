@@ -4,12 +4,10 @@ import sys
 
 
 def huge_fibonacci(n, m):
-    if n > m:
-        p = pisano_period(m)
-        ans = fibonacci(n % p) % m
-        return ans
-    else:
+    if n <= m:
         return fibonacci(n) % m
+    p = pisano_period(m)
+    return fibonacci(n % p) % m
 
 
 def pisano_period(m):

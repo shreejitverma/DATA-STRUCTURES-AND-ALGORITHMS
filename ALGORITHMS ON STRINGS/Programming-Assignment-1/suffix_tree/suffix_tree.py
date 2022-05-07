@@ -8,9 +8,8 @@ def build_suffix_tree(text):
   with all of the labels of its edges (the corresponding 
   substrings of the text) in any order.
   """
-  result = []
   # Implement this function yourself
-  return result
+  return []
 
 
 if __name__ == '__main__':
