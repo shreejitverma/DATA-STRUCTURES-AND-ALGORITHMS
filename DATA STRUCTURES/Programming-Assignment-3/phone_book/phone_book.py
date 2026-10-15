@@ -9,7 +9,7 @@ class Query:
 
 def read_queries():
 	n = int(input())
-	return [Query(input().split()) for i in range(n)]
+	return [Query(input().split()) for _ in range(n)]
 
 def write_responses(result):
 	print('\n'.join(result))
@@ -24,10 +24,10 @@ def process_queries(queries):
 		if cur_query.type == 'add':
 			# if we already have contact with such number,
 			# we should rewrite contact's name
-			if contacts[index] != None:
-				contacts[index].name = cur_query.name
-			else: # otherwise, just add it
+			if contacts[index] is None: # otherwise, just add it
 				contacts[index] = cur_query
+			else:
+				contacts[index].name = cur_query.name
 		elif cur_query.type == 'del':
 			if contacts[index] != None:
 				contacts[index] = None

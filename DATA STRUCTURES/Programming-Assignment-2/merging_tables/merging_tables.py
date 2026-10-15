@@ -5,7 +5,7 @@ import sys
 n, m = map(int, sys.stdin.readline().split())
 lines = list(map(int, sys.stdin.readline().split()))
 rank = [1] * n
-parent = list(range(0, n))
+parent = list(range(n))
 ans = max(lines)
 
 def getParent(table):
@@ -24,7 +24,7 @@ def merge(destination, source):
     
     return True
 
-for i in range(m):
+for _ in range(m):
     destination, source = map(int, sys.stdin.readline().split())
     merge(destination - 1, source - 1)
     print(ans)

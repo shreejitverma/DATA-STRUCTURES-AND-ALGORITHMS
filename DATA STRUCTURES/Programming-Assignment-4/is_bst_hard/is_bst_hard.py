@@ -12,9 +12,10 @@ def IsBinarySearchTree(tree):
 
 def main():
   nodes = int(sys.stdin.readline().strip())
-  tree = []
-  for i in range(nodes):
-    tree.append(list(map(int, sys.stdin.readline().strip().split())))
+  tree = [
+      list(map(int,
+               sys.stdin.readline().strip().split())) for _ in range(nodes)
+  ]
   if IsBinarySearchTree(tree):
     print("CORRECT")
   else:

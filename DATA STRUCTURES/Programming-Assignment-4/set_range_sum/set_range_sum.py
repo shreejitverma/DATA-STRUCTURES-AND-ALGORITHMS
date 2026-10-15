@@ -10,7 +10,7 @@ class Vertex:
 		(self.key, self.sum, self.left, self.right, self.parent) = (key, sum, left, right, parent)
 
 def update(v):
-	if v == None:
+	if v is None:
 		return
 	v.sum = v.key + (v.left.sum if v.left != None else 0) + (v.right.sum if v.right != None else 0)
 	if v.left != None:
@@ -20,7 +20,7 @@ def update(v):
 
 def smallRotation(v):
 	parent = v.parent
-	if parent == None:
+	if parent is None:
 		return
 	grandparent = v.parent.parent
 	if parent.left == v:
@@ -57,10 +57,10 @@ def bigRotation(v):
 # Makes splay of the given vertex and makes
 # it the new root.
 def splay(v):
-	if v == None:
+	if v is None:
 		return None
 	while v.parent != None:
-		if v.parent.parent == None:
+		if v.parent.parent is None:
 			smallRotation(v)
 			break
 		bigRotation(v)
@@ -79,21 +79,18 @@ def find(root, key):
 	last = root
 	next = None
 	while v != None:
-		if v.key >= key and (next == None or v.key < next.key):
+		if v.key >= key and (next is None or v.key < next.key):
 			next = v
 		last = v
 		if v.key == key:
 			break
-		if v.key < key:
-			v = v.right
-		else:
-			v = v.left
+		v = v.right if v.key < key else v.left
 	root = splay(last)
 	return (next, root)
 
 def split(root, key):
 	(result, root) = find(root, key)
-	if result == None:
+	if result is None:
 		return (root, None)
 	right = splay(result)
 	left = right.left
@@ -106,9 +103,9 @@ def split(root, key):
 
 
 def merge(left, right):
-	if left == None:
+	if left is None:
 		return right
-	if right == None:
+	if right is None:
 		return left
 	while right.left != None:
 		right = right.left
@@ -126,7 +123,7 @@ def insert(x):
 	global root
 	(left, right) = split(root, x)
 	new_vertex = None
-	if right == None or right.key != x:
+	if right is None or right.key != x:
 		new_vertex = Vertex(x, x, None, None, None)
 	root = merge(merge(left, new_vertex), right)
 
@@ -164,7 +161,7 @@ def sum(fr, to):
 MODULO = 1000000001
 n = int(stdin.readline())
 last_sum_result = 0
-for i in range(n):
+for _ in range(n):
 	line = stdin.readline().split()
 	if line[0] == '+':
 		x = int(line[1])

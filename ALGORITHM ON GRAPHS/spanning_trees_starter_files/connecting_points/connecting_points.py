@@ -3,9 +3,8 @@ import sys
 import math
 
 def minimum_distance(x, y):
-    result = 0.
     #write your code here
-    return result
+    return 0.
 
 
 if __name__ == '__main__':

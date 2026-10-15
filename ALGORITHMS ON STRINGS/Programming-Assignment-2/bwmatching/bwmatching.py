@@ -37,7 +37,8 @@ if __name__ == '__main__':
   # spend only O(|pattern|) to find all occurrences of the pattern
   # in the text instead of O(|pattern| + |text|).  
   starts, occ_counts_before = PreprocessBWT(bwt)
-  occurrence_counts = []
-  for pattern in patterns:
-    occurrence_counts.append(CountOccurrences(pattern, bwt, starts, occ_counts_before))
+  occurrence_counts = [
+      CountOccurrences(pattern, bwt, starts, occ_counts_before)
+      for pattern in patterns
+  ]
   print(' '.join(map(str, occurrence_counts)))

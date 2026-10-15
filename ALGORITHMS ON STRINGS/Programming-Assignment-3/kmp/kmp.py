@@ -8,9 +8,8 @@ def find_pattern(pattern, text):
   and return a list of all positions in the text
   where the pattern starts in the text.
   """
-  result = []
   # Implement this function yourself
-  return result
+  return []
 
 
 if __name__ == '__main__':

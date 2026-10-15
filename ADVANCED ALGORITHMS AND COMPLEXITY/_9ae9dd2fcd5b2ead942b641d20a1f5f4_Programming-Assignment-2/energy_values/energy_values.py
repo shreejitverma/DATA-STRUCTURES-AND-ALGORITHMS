@@ -17,7 +17,7 @@ def ReadEquation():
     size = int(input())
     a = []
     b = []
-    for row in range(size):
+    for _ in range(size):
         line = list(map(float, input().split()))
         a.append(line[:size])
         b.append(line[size])
@@ -54,7 +54,7 @@ def SolveEquation(equation):
 
     used_columns = [False] * size
     used_rows = [False] * size
-    for step in range(size):
+    for _ in range(size):
         pivot_element = SelectPivotElement(a, used_rows, used_columns)
         SwapLines(a, b, used_rows, pivot_element)
         ProcessPivotElement(a, b, pivot_element)

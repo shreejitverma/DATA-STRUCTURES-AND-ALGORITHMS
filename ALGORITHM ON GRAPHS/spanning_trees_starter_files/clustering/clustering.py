@@ -12,7 +12,7 @@ if __name__ == '__main__':
     data = list(map(int, input.split()))
     n = data[0]
     data = data[1:]
-    x = data[0:2 * n:2]
+    x = data[:2 * n:2]
     y = data[1:2 * n:2]
     data = data[2 * n:]
     k = data[0]

@@ -1,9 +1,8 @@
 # python3
 import sys
 
-def solve (p, q):
-	result = p
-	return result
+def solve(p, q):
+	return p
 
 p = sys.stdin.readline ().strip ()
 q = sys.stdin.readline ().strip ()

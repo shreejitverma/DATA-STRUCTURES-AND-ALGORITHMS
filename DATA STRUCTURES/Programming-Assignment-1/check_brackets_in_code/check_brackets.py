@@ -20,13 +20,5 @@ if __name__ == "__main__":
     text = sys.stdin.read()
 
     opening_brackets_stack = []
-    for i, next in enumerate(text):
-        if next == '(' or next == '[' or next == '{':
-            # Process opening bracket, write your code here
-            pass
-
-        if next == ')' or next == ']' or next == '}':
-            # Process closing bracket, write your code here
-            pass
 
     # Printing answer, write your code here

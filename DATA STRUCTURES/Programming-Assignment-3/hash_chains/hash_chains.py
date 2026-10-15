@@ -49,13 +49,12 @@ class QueryProcessor:
             elif query.type == 'add':
                 if ind == -1:
                     self.elems.append(query.s)
-            else:
-                if ind != -1:
-                    self.elems.pop(ind)
+            elif ind != -1:
+                self.elems.pop(ind)
 
     def process_queries(self):
         n = int(input())
-        for i in range(n):
+        for _ in range(n):
             self.process_query(self.read_query())
 
 if __name__ == '__main__':

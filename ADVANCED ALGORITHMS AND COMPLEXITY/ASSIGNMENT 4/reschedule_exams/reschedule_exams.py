@@ -8,20 +8,18 @@
 #   * If there exists a proper recoloring, return value is a list containing new colors, similar to the `colors` argument.
 #   * Otherwise, return value is None.
 def assign_new_colors(n, edges, colors):
-    # Insert your code here.
-    if n % 3 == 0:
-        new_colors = []
-        for i in range(n):
-            new_colors[i].append("RGB"[i % 3])
-        return new_colors
-    else:
+    if n % 3 != 0:
         return None
+    new_colors = []
+    for i in range(n):
+        new_colors[i].append("RGB"[i % 3])
+    return new_colors
     
 def main():
     n, m = map(int, input().split())
     colors = input().split()
     edges = []
-    for i in range(m):
+    for _ in range(m):
         u, v = map(int, input().split())
         edges.append((u, v))
     new_colors = assign_new_colors(n, edges, colors)

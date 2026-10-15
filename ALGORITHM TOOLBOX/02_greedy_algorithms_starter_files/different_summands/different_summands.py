@@ -2,9 +2,8 @@
 import sys
 
 def optimal_summands(n):
-    summands = []
     #write your code here
-    return summands
+    return []
 
 if __name__ == '__main__':
     input = sys.stdin.read()
